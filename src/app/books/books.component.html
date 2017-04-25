@@ -1,0 +1,28 @@
+<div class="row">
+  <hr>
+  <div class="col-md-5">
+  
+    <div *ngFor= "let book of books; let i=index">
+
+      <a href="#" class="list-group-item clearfix" (click)="onSelected()">
+        <div class="pull-left">
+          <h4>Title: {{ book.name }}</h4>
+          <h4>Price: ${{ book.price }}</h4>
+          <p class="list-group-item-text">Description: {{ book.description }}</p>
+        </div>
+        <span class="pull-right">
+              <img
+                [src]="book.imagePath"
+                alt="{{book.name}}"
+                class="img-responsive"
+                style="max-height: 273px;">
+            </span>
+      </a>
+      
+      <button class="btn btn-success" (click)="onAddShoppingCart(i)"> Buy </button>
+      <p>  
+        <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{successMessage}}</ngb-alert>
+      </p>
+    </div>         
+  </div>
+</div>

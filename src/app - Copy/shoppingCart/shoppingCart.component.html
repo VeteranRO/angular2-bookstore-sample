@@ -1,0 +1,35 @@
+<div class="row">
+  <hr>
+  <h3>Shooping Cart </h3>
+  <div class="col-md-5">
+  <ul>  
+      <li *ngFor= "let itemEl of shoppingCartItems; let i = index"> 
+
+      <a href="#" class="list-group-item clearfix" (click)="onSelected()">
+        <div class="pull-left">
+          <h4 class="list-group-item-heading">{{ i }}</h4>
+          <!-- sub loop for book object -->
+            <div *ngFor= "let bookEl of itemEl.book">
+              <div>
+                <h4 class="list-group-item-heading">{{ bookEl.name }}</h4>
+                <h4 class="list-group-item-heading">{{ bookEl.price }}</h4>
+                <p class="list-group-item-text">{{ bookEl.description }}</p>
+              </div>
+              <span>
+                    <img
+                      [src]="bookEl.imagePath"
+                      alt="{{bookEl.name}}"
+                      class="img-responsive"
+                      style="max-height: 273px;">
+              </span>
+            </div>
+          
+          <p class="list-group-item-text">{{ itemEl.amount }}</p>
+        </div>        
+      </a>
+      <button class="btn btn-delete" (click)="onDelete(i)"> Delete {{i}}</button>
+    </li>
+  </ul> 
+    
+  </div>
+</div>

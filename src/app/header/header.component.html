@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="/books" (click)="onSelect('books')">Book Store</a>
+    </div>
+    
+    <div class="container">
+	<div class="row">
+        <div width="400">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <img
+                            src="assets/images/search.png"
+                            class="img-responsive"
+                            style="max-height: 18px;">                        
+                    </span>                    
+                </div>                
+            </div>
+            <span>
+            <a routerLink="/shopping-cart" (click)="onSelect('shopping-cart')">
+                <img
+                    src="assets/images/cart.png"
+                    class="img-responsive"
+                    style="max-height: 32px;">{{shoppingCartCounter}}
+                </a>
+            </span>    
+        </div>
+	</div>
+    </div>
+</div>
+</nav>
